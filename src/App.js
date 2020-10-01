@@ -1,18 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Navbar from './components/Navbar'
+import Search from './components/Search'
+
 import './App.css';
 
 const App = () => {
 
-  const [gif, setGif] = useState(null)
-
-  useEffect(() => {
-    setGif('test')
-  }, [])
-
   return (
     <div className="App">
       <Navbar/>
+      <Search/>
     </div>
   );
 }
