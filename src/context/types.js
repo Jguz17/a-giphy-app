@@ -1,0 +1,2 @@
+export const SEARCH_GIPHYS = 'SEARCH_GIPHYS'
+export const SET_LOADING = 'SET_LOADING'
