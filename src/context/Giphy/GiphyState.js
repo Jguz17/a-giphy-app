@@ -5,7 +5,8 @@ import GiphyReducer from './giphyReducer'
 
 import {
     SEARCH_GIPHYS,
-    SET_LOADING
+    SET_LOADING,
+    CLEAR_GIPHYS
 } from '../types'
 
 const API_KEY = '1L3eEnVgnRLhgoGaULaa0btddYkhJT8O'
@@ -31,6 +32,11 @@ const GiphyState = (props) => {
         })
     }
 
+    // clear giphys
+    const clearGiphys = () => dispatch({
+        type: CLEAR_GIPHYS
+    })
+
     // set loading 
     const setLoading = () => dispatch({ type: SET_LOADING })
 
@@ -38,7 +44,8 @@ const GiphyState = (props) => {
         giphys: state.giphys,
         loading: state.loading,
         setLoading,
-        searchGiphys
+        searchGiphys,
+        clearGiphys
     }}>
     {props.children}
     </GiphyContext.Provider>

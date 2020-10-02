@@ -14,13 +14,20 @@ const Giphys = () => {
         return <Spinner/>
     } else {
         return (
-            <div>
+            <div style={userStyle}>
                 {giphys.map(giphy => {
                     return <GiphyItem gif={giphy.images.original.url}/>
                 })}
             </div>
         )
     }
+}
+
+const userStyle = {
+    display: 'flex',
+    justifyContent: 'space-between',
+    flexWrap: 'wrap',
+    paddingTop: '3rem'
 }
 
 export default Giphys

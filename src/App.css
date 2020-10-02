@@ -19,9 +19,14 @@ h6 {
 }
 
 p, 
-li {
+li,
+button {
   font-family: 'Roboto-Bold';
   color: #fff;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 /* ==== NAVBAR STYLES ==== */
