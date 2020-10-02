@@ -7,6 +7,7 @@
 body {
   padding: 0 15rem;
   background-color: #131313;
+  font-family: 'Roboto-Regular';
 }
 
 h1,
@@ -16,12 +17,23 @@ h4,
 h5,
 h6 {
   font-family: 'Roboto-Bold';
+  color: #fff;
 }
 
 p, 
-li {
+li,
+button {
   font-family: 'Roboto-Bold';
   color: #fff;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 /* ==== NAVBAR STYLES ==== */
@@ -68,4 +80,16 @@ li {
   font-family: 'Roboto-Regular';
   outline: none;
   border: none;
+}
+
+.search:hover {
+  cursor: pointer;
+}
+
+/* ==== ALERT STYLES ==== */
+.alert {
+  background-color: #f4f4f4;
+  padding: 0.7rem;
+  margin: 1rem 0;
+  opacity: 0.9;
 }

@@ -5,7 +5,9 @@ import GiphyReducer from './giphyReducer'
 
 import {
     SEARCH_GIPHYS,
-    SET_LOADING
+    SET_LOADING,
+    CLEAR_GIPHYS,
+    GET_GIPHY
 } from '../types'
 
 const API_KEY = '1L3eEnVgnRLhgoGaULaa0btddYkhJT8O'
@@ -14,6 +16,7 @@ const GiphyState = (props) => {
 
     const initialState = {
         giphys: [],
+        giphy: {},
         loading: false
     }
 
@@ -23,7 +26,7 @@ const GiphyState = (props) => {
     const searchGiphys = async (text) => {
         setLoading()
 
-        const res = await axios.get(`http://api.giphy.com/v1/gifs/search?q=${text}&api_key=${API_KEY}&limit=10`)
+        const res = await axios.get(`http://api.giphy.com/v1/gifs/search?q=${text}&api_key=${API_KEY}`)
 
         dispatch({
             type: SEARCH_GIPHYS,
@@ -31,14 +34,34 @@ const GiphyState = (props) => {
         })
     }
 
+    const getGiphy = async (id) => {
+        // https://api.giphy.com/v1/gifs/53UkYwhzhlBSg?api_key=1L3eEnVgnRLhgoGaULaa0btddYkhJT8O
+        setLoading()
+        console.log(id)
+        const res = await axios.get(`https://api.giphy.com/v1/gifs/${id}?api_key=${API_KEY}`)
+        // console.log(res)
+        dispatch({
+            type: GET_GIPHY,
+            payload: res.data.data
+        })
+    }
+
+    // clear giphys
+    const clearGiphys = () => dispatch({
+        type: CLEAR_GIPHYS
+    })
+
     // set loading 
     const setLoading = () => dispatch({ type: SET_LOADING })
 
     return <GiphyContext.Provider value={{
         giphys: state.giphys,
         loading: state.loading,
+        giphy: state.giphy,
         setLoading,
-        searchGiphys
+        searchGiphys,
+        clearGiphys,
+        getGiphy
     }}>
     {props.children}
     </GiphyContext.Provider>

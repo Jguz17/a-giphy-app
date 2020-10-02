@@ -4,9 +4,13 @@ const GiphyItem = (props) => {
     
     return (
         <Fragment>
-            <img src={props.gif}/>
+            <img style={userStyle} src={props.gif}/>
         </Fragment>
     )
 }
 
+const userStyle = {
+    maxWidth: '300px',
+    maxHeight: '300px',
+}
 export default GiphyItem
