@@ -1,4 +1,4 @@
-import React, { useContext, Fragment } from 'react'
+import React, { useContext } from 'react'
 import { Link } from 'react-router-dom'
 import GiphyItem from './GiphyItem'
 import Spinner from '../components/Spinner'
@@ -17,7 +17,6 @@ const Giphys = () => {
         return (
             <div style={userStyle}>
                 {giphys.map(giphy => {
-                    {/* console.log(giphy.id) */}
                     return (
                         <div style={giphyContainerStyles}>
                             <GiphyItem gif={giphy.images.original.url}/>
