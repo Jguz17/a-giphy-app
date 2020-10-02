@@ -7,6 +7,7 @@
 body {
   padding: 0 15rem;
   background-color: #131313;
+  font-family: 'Roboto-Regular';
 }
 
 h1,
@@ -79,4 +80,16 @@ button:hover {
   font-family: 'Roboto-Regular';
   outline: none;
   border: none;
+}
+
+.search:hover {
+  cursor: pointer;
+}
+
+/* ==== ALERT STYLES ==== */
+.alert {
+  background-color: #f4f4f4;
+  padding: 0.7rem;
+  margin: 1rem 0;
+  opacity: 0.9;
 }
