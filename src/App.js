@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import Navbar from './components/Navbar'
 import Home from './components/Home'
-import Search from './components/Search'
+import About from './components/About'
 import Giphy from './components/Giphy'
 
 import GiphyState from './context/Giphy/GiphyState'
@@ -21,6 +21,7 @@ const App = () => {
             <Switch>
               <Route exact path='/' component={Home}/>
               <Route exact path='/giphy/:id' component={Giphy}/>
+              <Route exact path='/about' component={About} />
             </Switch>
           </div>
         </div>
