@@ -4,7 +4,7 @@ const GiphyItem = (props) => {
     
     return (
         <Fragment>
-            <img style={userStyle} src={props.gif}/>
+            <img style={userStyle} src={props.gif} alt=''/>
         </Fragment>
     )
 }
