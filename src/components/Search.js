@@ -52,7 +52,8 @@ const buttonStyles = {
     height: '3rem',
     outline: 'none',
     marginTop: '1rem',
-    backgroundColor: '#00924C'
+    backgroundColor: '#00924C',
+    color: '#fff'
 }
 
 

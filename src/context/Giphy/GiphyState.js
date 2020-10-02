@@ -26,7 +26,7 @@ const GiphyState = (props) => {
     const searchGiphys = async (text) => {
         setLoading()
 
-        const res = await axios.get(`http://api.giphy.com/v1/gifs/search?q=${text}&api_key=${API_KEY}`)
+        const res = await axios.get(`https://api.giphy.com/v1/gifs/search?q=${text}&api_key=${API_KEY}`)
 
         dispatch({
             type: SEARCH_GIPHYS,
@@ -35,7 +35,6 @@ const GiphyState = (props) => {
     }
 
     const getGiphy = async (id) => {
-        // https://api.giphy.com/v1/gifs/53UkYwhzhlBSg?api_key=1L3eEnVgnRLhgoGaULaa0btddYkhJT8O
         setLoading()
         console.log(id)
         const res = await axios.get(`https://api.giphy.com/v1/gifs/${id}?api_key=${API_KEY}`)
