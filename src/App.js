@@ -1,8 +1,10 @@
 import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
 import Navbar from './components/Navbar'
+import Home from './components/Home'
 import Search from './components/Search'
-import Giphys from './components/Giphys'
+import Giphy from './components/Giphy'
 
 import GiphyState from './context/Giphy/GiphyState'
 
@@ -12,11 +14,17 @@ const App = () => {
 
   return (
     <GiphyState>
-      <div className="App">
-        <Navbar/>
-        <Search/>
-        <Giphys/>
-      </div>
+      <Router>
+        <div className="App">
+          <Navbar/>
+          <div className='container'>
+            <Switch>
+              <Route exact path='/' component={Home}/>
+              <Route exact path='/giphy/:id' component={Giphy}/>
+            </Switch>
+          </div>
+        </div>
+      </Router>
     </GiphyState>
   );
 }

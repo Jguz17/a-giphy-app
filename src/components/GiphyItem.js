@@ -12,7 +12,5 @@ const GiphyItem = (props) => {
 const userStyle = {
     maxWidth: '300px',
     maxHeight: '300px',
-    paddingBottom: '1rem'
 }
-
 export default GiphyItem

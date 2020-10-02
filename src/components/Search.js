@@ -24,18 +24,20 @@ const Search = () => {
             <form onSubmit={onSubmit}>
                 <input id='search' type='text' placeholder='Search Giphy...' name='search' value={text} onChange={onChange}/>
             </form>
-            {giphyContext.giphys.length > 0 &&(<button onClick={giphyContext.clearGiphys} style={buttonStyle}>clear</button>)}
+            {giphyContext.giphys.length > 0 &&(
+                    <button onClick={giphyContext.clearGiphys} style={clearStyles}>clear</button>
+                )}
         </Fragment>
     )
 }
 
-const buttonStyle = {
+const clearStyles = {
     width: '100%',
     height: '3rem',
     marginTop: '1rem',
     border: 'none',
     background: '#dc3545'
-
 }
+
 
 export default Search
